@@ -2,7 +2,7 @@
 <html>
     <head>
         <title>Card Sort</title>
-        <link rel="shortcut icon" type="image/png" href="/favicon.ico"/>
+        <link rel="shortcut icon" type="image/png" href="./favicon.ico"/>
     </head>
     
     <body onresize="resize();">
@@ -13,7 +13,8 @@
             
             body
             {
-                background-color: black;
+                background-image: url("./background.png");
+                background-size: 50px;
                 overflow: hidden;
                 margin: 0;
                 padding: 0;
@@ -21,10 +22,13 @@
             
             #canvas
             {
-                position: absolute;
+                position: fixed;
                 top: 50%;
                 left: 50%;
                 transform: translate(-50%, -50%);
+                border-style: dashed;
+                border-color: red;
+                border-width: 10px;
             }
             
             #images
@@ -61,7 +65,20 @@
             var front_cards = ["AC.png", "AD.png", "AH.png", "AS.png", "2C.png", "2D.png", "2H.png", "2S.png", "3C.png", "3D.png", "3H.png", "3S.png", "4C.png", "4D.png", "4H.png", "4S.png", "5C.png", "5D.png", "5H.png", "5S.png", "6C.png", "6D.png", "6H.png", "6S.png", "7C.png", "7D.png", "8H.png", "8S.png", "9C.png", "9D.png", "9H.png", "9S.png", "JC.png", "JD.png", "JH.png", "JS.png", "QC.png", "QD.png", "QH.png", "QS.png", "KC.png", "KD.png", "KH.png", "KS.png"];
             var front_cards_numbers = [1, 1, 1, 1, 2, 2, 2, 2, 3, 3, 3, 3, 4, 4, 4, 4, 5, 5, 5, 5, 6, 6, 6, 6, 7, 7, 7, 7, 8, 8, 8, 8, 9, 9, 9, 9, 10, 10, 10, 10, 11, 11, 11, 11, 12, 12, 12, 12];
             var back_cards = "red_back.png";
-            var number_of_cards = 5;
+
+            while(true)
+            {
+                var number_of_cards = parseInt(prompt("Enter the number of cards [1-10]"));
+                if(!Number.isInteger(number_of_cards))
+                {
+                    continue;
+                }
+
+                if(number_of_cards > 0 && number_of_cards <= 10)
+                {
+                    break;
+                }
+            }
 
             for(var n = 0; n < front_cards.length; n++)
             {
