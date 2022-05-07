@@ -9,4 +9,4 @@ The program will begin bubble sorting and continue up until all of the cards are
 When the sorting is finished, the cards are revealed to the user. 
 
 ## Controls
-Arrow keys - to move the camera and see the cards.
+```(Arrow keys)``` - to move the camera and see the cards.
