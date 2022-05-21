@@ -1,4 +1,4 @@
-# cardsortJS :black_joker:
+# cardsortJS 🃏
 Small bubble sort visualizer with a virtual card deck.
 
 ## Procedure
