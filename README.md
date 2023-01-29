@@ -1,4 +1,4 @@
-# cardsortJS 🃏
+# cardsort 🃏
 Small bubble sort visualizer with a virtual card deck.
 
 ## Procedure
@@ -9,4 +9,4 @@ The program will begin bubble sorting and continue up until all of the cards are
 When the sorting is finished, the cards are revealed to the user. 
 
 ## Controls
-```(ARROW KEYS)``` - Pan the camera to see cards in any direction.
+```(ARROW)``` - Pan the camera to see cards in any direction.
