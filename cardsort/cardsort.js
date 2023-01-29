@@ -25,13 +25,13 @@ var back_cards = "red_back.png";
 
 while(true)
 {
-    var number_of_cards = parseInt(prompt("Enter the number of cards [1-10]"));
+    var number_of_cards = parseInt(prompt("Enter the number of cards [1-25]"));
     if(!Number.isInteger(number_of_cards))
     {
         continue;
     }
 
-    if(number_of_cards > 0 && number_of_cards <= 10)
+    if(number_of_cards >= 1 && number_of_cards <= 25)
     {
         break;
     }
@@ -75,7 +75,7 @@ var current_time = 0;
 var scale_factor = 0.1;
 var camera =
 {
-    x: -0.5 * back.width - 100,
+    x: -0.5 * back.width - 50,
     y: 0
 };
 var keys = [];
@@ -95,9 +95,9 @@ function render()
     {
         camera.y -= 3;
 
-        if(camera.y < 0.5 * (back.height * scale_factor - canvas.height) + 100)
+        if(camera.y < 0.5 * (back.height * scale_factor - canvas.height) + 50)
         {
-            camera.y = 0.5 * (back.height * scale_factor - canvas.height) + 100;
+            camera.y = 0.5 * (back.height * scale_factor - canvas.height) + 50;
         }
     }
     
@@ -105,9 +105,9 @@ function render()
     {
         camera.y += 3;
 
-        if(camera.y > 0.5 * (canvas.height - back.height * scale_factor) - 100)
+        if(camera.y > 0.5 * (canvas.height - back.height * scale_factor) - 50)
         {
-            camera.y = 0.5 * (canvas.height - back.height * scale_factor) - 100;
+            camera.y = 0.5 * (canvas.height - back.height * scale_factor) - 50;
         }
     }
     
@@ -115,9 +115,9 @@ function render()
     {
         camera.x -= 3;
 
-        if(camera.x < -0.5 * back.width * scale_factor - 100)
+        if(camera.x < -0.5 * back.width * scale_factor - 50)
         {
-            camera.x = -0.5 * back.width * scale_factor - 100;
+            camera.x = -0.5 * back.width * scale_factor - 50;
         }
     }
     
@@ -125,9 +125,9 @@ function render()
     {
         camera.x += 3;
 
-        if(camera.x > (cards.length - 0.5) * back.width * scale_factor - canvas.width + 100)
+        if(camera.x > (cards.length - 0.5) * back.width * scale_factor - canvas.width + 50)
         {
-            camera.x = (cards.length - 0.5) * back.width * scale_factor - canvas.width + 100;
+            camera.x = (cards.length - 0.5) * back.width * scale_factor - canvas.width + 50;
         }
     }
     
@@ -209,7 +209,7 @@ function bubbleSort(array)
         {
             command_stack.push(["flip", m]);
             
-            if(array[m].id > array[m + 1].id)
+            if(~~(array[m].id / 4) > ~~(array[m + 1].id / 4))
             {
                 command_stack.push(["swap", m]);
                 var t = array[m].id;
