@@ -9,4 +9,4 @@ The program will begin bubble sorting and continue up until all of the cards are
 When the sorting is finished, the cards are revealed to the user. 
 
 ## Controls
-```(ARROW)``` - Pan the camera to see cards in any direction.
+```(ARROW)``` or ```(WASD)``` - Pan the camera in any direction to see cards.
