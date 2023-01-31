@@ -91,7 +91,7 @@ function render()
 {
     //LOGIC
     
-    if(keys.includes(38))
+    if(keys.includes("ArrowUp") || keys.includes("w") || keys.includes("W"))
     {
         camera.y -= 3;
 
@@ -101,7 +101,7 @@ function render()
         }
     }
     
-    if(keys.includes(40))
+    if(keys.includes("ArrowDown") || keys.includes("s") || keys.includes("S"))
     {
         camera.y += 3;
 
@@ -111,7 +111,7 @@ function render()
         }
     }
     
-    if(keys.includes(37))
+    if(keys.includes("ArrowLeft") || keys.includes("a") || keys.includes("A"))
     {
         camera.x -= 3;
 
@@ -121,7 +121,7 @@ function render()
         }
     }
     
-    if(keys.includes(39))
+    if(keys.includes("ArrowRight") || keys.includes("d") || keys.includes("D"))
     {
         camera.x += 3;
 
@@ -175,9 +175,9 @@ function addKey(e)
 {
     e = e || window.event;
     
-    if(!keys.includes(e.keyCode))
+    if(!keys.includes(e.key))
     {
-        keys.push(e.keyCode);
+        keys.push(e.key);
     }
 }
 
@@ -185,11 +185,11 @@ function subtractKey(e)
 {
     e = e || window.event;
     
-    if(keys.includes(e.keyCode))
+    if(keys.includes(e.key))
     {
         for(var n = 0; n < keys.length; n++)
         {
-            if(keys[n] == e.keyCode)
+            if(keys[n] == e.key)
             {
                 keys.splice(n, 1);
             }
